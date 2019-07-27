@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="userService" class="com.itheima.dao.impl.UserService" c:userDao-ref="userDao">
+        <!--<constructor-arg name="userDao" ref="userDao"></constructor-arg>-->
+    </bean>
+
+    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl">
+        <property name="list">
+            <list>
+                <value>123</value>
+                <value>nihao</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="first" value="diyi"></entry>
+                <entry key="two" value="dier"></entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="diyi">第一</prop>
+                <prop key="dier">第二</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
